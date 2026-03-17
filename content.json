@@ -1,0 +1,84 @@
+{
+  "header": {
+    "name": "Guru Subramani PhD",
+    "title": "I help robots touch and feel the world.",
+    "email": "mail@sguru.ai",
+    "bio": "My work focuses on imitation learning for physical AI."
+  },
+  "sections": [
+    {
+      "title": "Areas of Interest",
+      "type": "list",
+      "items": [
+        { "label": "Imitation Learning", "description": "Learning policies from human demonstrations and teleoperation." },
+        { "label": "Modeling Physical Interaction", "description": "Modeling contact-rich interactions and their semantics." },
+        { "label": "Physical AI", "description": "Feature representations for tactile and proprioceptive sensing." },
+        { "label": "Control Systems", "description": "Designing controllers that connect perception to actuation." },
+        { "label": "Embedded Systems and Software Architecture", "description": "Embedded hardware and software for real-time robotic systems." }
+      ]
+    },
+    {
+      "title": "Publications",
+      "type": "publications",
+      "scholarUrl": "https://scholar.google.com/citations?user=7wDvHs4AAAAJ&hl=en",
+      "items": [
+        {
+          "title": "A method for constraint inference using pose and wrench measurements",
+          "authors": "Guru Subramani, M. Hagenow, M. Gleicher, M. Zinn",
+          "venue": "arXiv",
+          "year": 2020,
+          "url": "https://arxiv.org/abs/2010.15916"
+        },
+        {
+          "title": "Characterizing input methods for human-to-robot demonstrations",
+          "authors": "Guru Subramani, P. Praveena, B. Mutlu, M. Gleicher",
+          "venue": "ACM/IEEE HRI",
+          "year": 2019,
+          "url": "https://dl.acm.org/doi/10.1109/HRI.2019.8673065"
+        },
+        {
+          "title": "Inferring Geometric Constraints in Human Demonstrations for Robot Programming",
+          "authors": "Guru Subramani",
+          "venue": "PhD Dissertation",
+          "year": 2019,
+          "url": "https://graphics.cs.wisc.edu/Papers/2019/Sub19/GuruSubramaniDissertation.pdf"
+        },
+        {
+          "title": "Inferring geometric constraints in human demonstrations",
+          "authors": "Guru Subramani, M. Zinn, M. Gleicher",
+          "venue": "CoRL",
+          "year": 2018,
+          "url": "https://proceedings.mlr.press/v87/subramani18a.html"
+        },
+        {
+          "title": "Recognizing geometric constraints in human demonstrations using force and position signals",
+          "authors": "Guru Subramani, M. Gleicher, M. Zinn",
+          "venue": "IEEE RA-L",
+          "year": 2018,
+          "url": "https://ieeexplore.ieee.org/document/8259468"
+        },
+        {
+          "title": "Recognizing actions during tactile manipulations through force sensing",
+          "authors": "Guru Subramani, D. Rakita, H. Wang, J. Black, M. Zinn, M. Gleicher",
+          "venue": "IEEE/RSJ IROS",
+          "year": 2017,
+          "url": "https://ieeexplore.ieee.org/document/8202271"
+        },
+        {
+          "title": "Development of a Robotic Motor Skills Assessment System for Children With Autism",
+          "authors": "Guru Subramani, A. Fisher, M. Bittmann, A. Mason, B. Travers, M. Zinn",
+          "venue": "Frontiers in Biomedical Devices",
+          "year": 2017,
+          "url": "https://asmedigitalcollection.asme.org/biomedical/proceedings/BIOMED2017/57533/V001T05A009/236162"
+        },
+        {
+          "title": "Tackling friction—an analytical modeling approach to understanding friction in single tendon driven continuum manipulators",
+          "authors": "Guru Subramani, M. Zinn",
+          "venue": "IEEE ICRA",
+          "year": 2015,
+          "url": "https://ieeexplore.ieee.org/document/7139242"
+        }
+      ]
+    }
+  ]
+}
