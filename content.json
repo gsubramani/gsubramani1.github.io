@@ -1,7 +1,7 @@
 {
   "header": {
     "name": "Guru Subramani PhD",
-    "title": "I help robots touch and feel the world.",
+    "title": "Enabling robots to touch and feel the world.",
     "email": "mail@sguru.ai",
     "bio": "My work focuses on imitation learning for physical AI."
   },
@@ -15,6 +15,18 @@
         { "label": "Physical AI", "description": "Feature representations for tactile and proprioceptive sensing." },
         { "label": "Control Systems", "description": "Designing controllers that connect perception to actuation." },
         { "label": "Embedded Systems and Software Architecture", "description": "Embedded hardware and software for real-time robotic systems." }
+      ]
+    },
+    {
+      "title": "Projects",
+      "type": "projects",
+      "items": [
+        {
+          "title": "Recognizing Actions during Tactile Manipulations through Force Sensing",
+          "image": "projects/iros-2017-wavelets/images/methods_overview_figure.png",
+          "description": "A method for identifying and temporally localizing tactile force actions using the Continuous Wavelet Transform with Complex Morlet wavelets. Demonstrated successful recognition of various manipulation actions from force signals.",
+          "url": "projects/iros-2017-wavelets/"
+        }
       ]
     },
     {
