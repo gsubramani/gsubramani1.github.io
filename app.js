@@ -94,8 +94,8 @@ function initRobotArm() {
   function getH() { return canvas.height / dpr; }
 
   // Arm parameters
-  var L1 = 38, L2 = 30, L3 = 24;            // link lengths
-  var W1 = 10, W2 = 8, W3 = 6;              // link widths
+  var L1 = 48, L2 = 40;                      // link lengths
+  var W1 = 10, W2 = 8;                       // link widths
   var gripLen = 12, gripW = 3;               // gripper finger size
 
   // Mobile base state
@@ -272,7 +272,7 @@ function initRobotArm() {
   // --- Mouse tracking & IK state ---
   var pageMouseX = null, pageMouseY = null;
   var hasTarget = false;
-  var curA1 = -Math.PI / 2, curA2 = 0, curA3 = 0;
+  var curA1 = -Math.PI / 2, curA2 = 0;
   var smoothing = 0.08;
 
   document.addEventListener('mousemove', function (e) {
@@ -299,9 +299,9 @@ function initRobotArm() {
 
   function solveIK(tx, ty, bx, by) {
     var x0 = bx, y0 = by;
-    var a1 = curA1, a2g = curA1 + curA2, a3g = curA1 + curA2 + curA3;
-    var angles = [a1, a2g, a3g];
-    var lengths = [L1, L2, L3];
+    var a1 = curA1, a2g = curA1 + curA2;
+    var angles = [a1, a2g];
+    var lengths = [L1, L2];
 
     for (var iter = 0; iter < 12; iter++) {
       for (var i = angles.length - 1; i >= 0; i--) {
@@ -323,13 +323,11 @@ function initRobotArm() {
 
     var ra1 = angles[0];
     var ra2 = angles[1] - angles[0];
-    var ra3 = angles[2] - angles[1];
 
     ra1 = Math.max(-Math.PI, Math.min(0, ra1));
     ra2 = Math.max(-2.2, Math.min(2.2, ra2));
-    ra3 = Math.max(-2.2, Math.min(2.2, ra3));
 
-    return { a1: ra1, a2: ra2, a3: ra3 };
+    return { a1: ra1, a2: ra2 };
   }
 
   function lerpAngle(from, to, t) {
@@ -391,21 +389,18 @@ function initRobotArm() {
     wheelAngle += distMoved / wheelRadius;
 
     // --- IK for arm ---
-    var targetA1, targetA2, targetA3;
+    var targetA1, targetA2;
     if (hasTarget && mouseCanvasX !== null) {
       var ik = solveIK(mouseCanvasX, mouseCanvasY, robotX, armBaseY);
       targetA1 = ik.a1;
       targetA2 = ik.a2;
-      targetA3 = ik.a3;
     } else {
       targetA1 = -Math.PI / 2;
       targetA2 = 0;
-      targetA3 = 0;
     }
 
     curA1 = lerpAngle(curA1, targetA1, smoothing);
     curA2 = lerpAngle(curA2, targetA2, smoothing);
-    curA3 = lerpAngle(curA3, targetA3, smoothing);
 
     // Gripper open/close
     var gripAngle = 0.35;
@@ -416,10 +411,7 @@ function initRobotArm() {
       var tA2g = curA1 + curA2;
       var x2g = x1g + Math.cos(tA2g) * L2;
       var y2g = y1g + Math.sin(tA2g) * L2;
-      var tA3g = tA2g + curA3;
-      var x3g = x2g + Math.cos(tA3g) * L3;
-      var y3g = y2g + Math.sin(tA3g) * L3;
-      var dist = Math.sqrt((x3g - mouseCanvasX) * (x3g - mouseCanvasX) + (y3g - mouseCanvasY) * (y3g - mouseCanvasY));
+      var dist = Math.sqrt((x2g - mouseCanvasX) * (x2g - mouseCanvasX) + (y2g - mouseCanvasY) * (y2g - mouseCanvasY));
       var closeT = Math.max(0, 1 - dist / 40);
       gripAngle = 0.35 * (1 - closeT * 0.85);
     }
@@ -435,21 +427,16 @@ function initRobotArm() {
     var totalA2 = curA1 + curA2;
     var x2 = x1 + Math.cos(totalA2) * L2;
     var y2 = y1 + Math.sin(totalA2) * L2;
-    var totalA3 = totalA2 + curA3;
-    var x3 = x2 + Math.cos(totalA3) * L3;
-    var y3 = y2 + Math.sin(totalA3) * L3;
 
     // Links
     drawRoundedLink(x0, y0, curA1 - Math.PI / 2, L1, W1, accent);
     drawJoint(x0, y0, 6);
     drawRoundedLink(x1, y1, totalA2 - Math.PI / 2, L2, W2, accent);
     drawJoint(x1, y1, 5);
-    drawRoundedLink(x2, y2, totalA3 - Math.PI / 2, L3, W3, accent);
-    drawJoint(x2, y2, 4);
 
     // Gripper
-    drawGripper(x3, y3, totalA3 - Math.PI / 2, gripAngle);
-    drawJoint(x3, y3, 3);
+    drawGripper(x2, y2, totalA2 - Math.PI / 2, gripAngle);
+    drawJoint(x2, y2, 4);
 
     requestAnimationFrame(animate);
   }
