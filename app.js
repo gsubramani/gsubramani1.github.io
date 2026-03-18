@@ -99,13 +99,13 @@ function initRobotArm() {
   var gripLen = 12, gripW = 3;               // gripper finger size
 
   // Mobile base state
-  var robotX = getW() * 0.5;                 // current horizontal position
-  var robotSpeed = 0;                        // current velocity
-  var wheelAngle = 0;                        // cumulative wheel rotation
   var wheelRadius = 8;
   var baseWidth = 30;
   var baseHeight = 14;
   var chassisH = 6;
+  var robotX = getW() - baseWidth;           // current horizontal position (start at right)
+  var robotSpeed = 0;                        // current velocity
+  var wheelAngle = 0;                        // cumulative wheel rotation
 
   var dark  = '#2F3337';
   var accent = '#A85A41';
@@ -272,17 +272,53 @@ function initRobotArm() {
   // --- Mouse tracking & IK state ---
   var pageMouseX = null, pageMouseY = null;
   var hasTarget = false;
+  var robotActivated = false;               // true after user clicks on the robot
   var curA1 = -Math.PI / 2, curA2 = 0;
   var smoothing = 0.08;
+
+  function getRobotHitBox() {
+    var H = getH();
+    var groundY = H - wheelRadius - 4;
+    var armBaseY = groundY - chassisH - 8 - 2;
+    return {
+      left:   robotX - baseWidth - wheelRadius,
+      right:  robotX + baseWidth + wheelRadius,
+      top:    armBaseY - L1 - L2 - 20,
+      bottom: groundY + wheelRadius + 5
+    };
+  }
 
   document.addEventListener('mousemove', function (e) {
     pageMouseX = e.clientX;
     pageMouseY = e.clientY;
-    hasTarget = true;
+    if (robotActivated) {
+      hasTarget = true;
+    } else {
+      // Show pointer cursor when hovering over the robot
+      var rect = canvas.getBoundingClientRect();
+      var cx = e.clientX - rect.left;
+      var cy = e.clientY - rect.top;
+      var hb = getRobotHitBox();
+      canvas.style.cursor = (cx >= hb.left && cx <= hb.right && cy >= hb.top && cy <= hb.bottom)
+        ? 'pointer' : 'default';
+    }
   });
 
   document.addEventListener('mouseleave', function () {
     hasTarget = false;
+  });
+
+  canvas.addEventListener('click', function (e) {
+    if (robotActivated) return;
+    var rect = canvas.getBoundingClientRect();
+    var cx = e.clientX - rect.left;
+    var cy = e.clientY - rect.top;
+    var hb = getRobotHitBox();
+    if (cx >= hb.left && cx <= hb.right && cy >= hb.top && cy <= hb.bottom) {
+      robotActivated = true;
+      canvas.style.cursor = 'default';
+      hasTarget = true;
+    }
   });
 
   // Convert page coords to canvas CSS-pixel coords
