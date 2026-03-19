@@ -112,20 +112,14 @@
         {
           "type": "list",
           "items": [
-            "<a href='../../18-CORL-Constraints/submit/18-CoRL-Constraints.pdf'>Camera-ready paper PDF</a>",
             "<a href='https://proceedings.mlr.press/v87/subramani18a.html'>CoRL 2018 proceedings page</a>",
-            "<a href='../../18-CORL-Constraints/posterPresentation/PosterSubramani.pdf'>Conference poster</a>",
-            "<a href='../../18-CORL-Constraints/submit/supplement/CORL2018-Supplement.pdf'>Supplementary PDF</a>",
-            "<a href='../../18-CORL-Constraints/submit/supplement/corl%20constraints%20video.mp4'>Supplementary demo video</a>",
-            "<a href='../../18-CORL-Constraints/code/geometric_constraints.py'>Constraint modeling code</a>",
-            "<a href='../../18-CORL-Constraints/code/derive_constraint_equations.py'>Symbolic derivations</a>"
+            "<a href='resources/PosterSubramani.pdf'>Conference poster</a>",
+            "<a href='resources/corl-constraints-video.mp4'>Supplementary demo video</a>",
+            "<a href='resources/geometric_constraints.py'>Constraint modeling code</a>",
+            "<a href='resources/derive_constraint_equations.py'>Symbolic derivations</a>"
           ]
         }
       ]
     }
-  ],
-  "footer": {
-    "paperUrl": "../../18-CORL-Constraints/submit/18-CoRL-Constraints.pdf",
-    "paperLabel": "Read the Camera-Ready Paper"
-  }
+  ]
 }

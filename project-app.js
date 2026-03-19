@@ -36,8 +36,10 @@ function renderProject(data) {
   // Footer
   html += '<footer>';
   html += '<div class="external-links">';
-  html += '<a href="' + data.footer.paperUrl + '">' + data.footer.paperLabel + '</a>';
-  html += ' | <a href="../../index.html">Back to Portfolio</a>';
+  if (data.footer) {
+    html += '<a href="' + data.footer.paperUrl + '">' + data.footer.paperLabel + '</a> | ';
+  }
+  html += '<a href="../../index.html">Back to Portfolio</a>';
   html += '</div>';
   html += '<p>© 2026 Guru Subramani</p>';
   html += '</footer>';
