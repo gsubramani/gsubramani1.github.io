@@ -40,7 +40,7 @@
           "type": "list",
           "items": [
             "<a href='https://proceedings.mlr.press/v87/subramani18a.html'><strong>Inferring geometric constraints in human demonstrations</strong></a>. Subramani, Zinn, Gleicher. <em>CoRL</em>, 2018.",
-            "<a href='https://dl.acm.org/doi/10.1109/HRI.2019.8673065'><strong>Characterizing input methods for human-to-robot demonstrations</strong></a>. Praveena, Subramani, Mutlu, Gleicher. <em>ACM/IEEE HRI</em>, 2019.",
+            "<a href='https://doi.org/10.1115/DMD2017-3447'><strong>Characterizing input methods for human-to-robot demonstrations</strong></a>. Praveena, Subramani, Mutlu, Gleicher. <em>ACM/IEEE HRI</em>, 2019.",
             "<a href='https://graphics.cs.wisc.edu/Papers/2019/Sub19/GuruSubramaniDissertation.pdf'><strong>Inferring Geometric Constraints in Human Demonstrations for Robot Programming</strong></a>. Guru Subramani. <em>PhD Dissertation</em>, 2019."
           ]
         }
