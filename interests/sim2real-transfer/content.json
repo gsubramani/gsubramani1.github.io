@@ -1,0 +1,56 @@
+{
+  "title": "Reinforcement Learning for Robotics",
+  "meta": {
+    "authors": "From trial-and-error to reasoning-based learning",
+    "venue": "Can reasoning overcome the sample efficiency problem?"
+  },
+  "sections": [
+    {
+      "title": "High fidelity vs compute and the Sim to Real gap",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Short of building hundreds of robots and running them for multiple decades, there isn't a great way for robots to learn through exploration. Evolution solved this through natural selection and exponential growth. In a sense, nature had the highest fidelity models to learn."
+        },
+        {
+          "type": "paragraph",
+          "text": "While we do have high fidelity simulations, the compute requirements to use these for Reinforcement Learning would be enormous. For example, high fidelity simulations that use the finite element method that result in accurate real world behavior would be impossible to use in reinforcement learning."
+        },
+        {
+          "type": "paragraph",
+          "text": "The advent of simulators such as PyBullet and MuJoCo improved performance sacrificing fidelity. Ultimately this resulted in the Sim2Real gap where policies learned in simulation fail in the real world."
+        },
+        {
+          "type": "paragraph",
+          "text": "However, simulators like MuJoCo also have the ability to run simulations in worlds with varied physical properties. Models trained across all these worlds are so effective that they also generalize to the real world. Robots can learn to walk really well now, probably better than I can walk myself!"
+        },
+        {
+          "type": "paragraph",
+          "text": "It's not hard to guess why the success of reinforcement learning hasn't translated to manipulation. It is probably really hard to get MuJoCo to simulate a can opener. Current reinforcement learning approaches aren't that sample efficient either. This is important for manipulation because learning how to pick ants out of an anthill using a stick probably can't be learned in Mujoco without a grad student spending years figuring out how to simulate ants and mud in Mujoco."
+        },
+        {
+          "type": "paragraph",
+          "text": "Are we over-engineering trial and error? Is there a better way?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The miracle of LLMs has allowed us to simulate reasoning and logic. LLMs are probably the way to get around the <em>do random things close to what seemed reasonable before</em> approach of RL. Reasoning or higher-order thinking may improve sample efficiency. This is probably the next frontier for robot learning."
+        }
+      ]
+    },
+    {
+      "title": "TLDR",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "High-fidelity simulations are computationally expensive; lower-fidelity ones create the Sim2Real gap",
+            "Domain randomization helps locomotion generalize, but manipulation remains sample-inefficient",
+            "Manipulation tasks are harder to simulate than locomotion (e.g., it's hard to simulate a can opener in MuJoCo)",
+            "Reasoning and LLMs may overcome RL's sample efficiency problem. This is probably the next frontier for robot learning."
+          ]
+        }
+      ]
+    }
+  ]
+}

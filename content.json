@@ -18,7 +18,7 @@
       ]
     },
     {
-      "title": "Projects",
+      "title": "Select Projects",
       "type": "projects",
       "items": [
         {
@@ -32,6 +32,22 @@
           "url": "projects/corl-2018-constraints/"
         }
       ]
+    },
+    {
+      "title": "Blurbs about interesting robotics topics",
+      "type": "list",
+      "description": "",
+      "items": [
+        { "label": "Reinforcement Learning for Robotics", "description": "The exploration exploitation trade-off is what keeps reinforcement learning from solving robotics. Simulations help but the fidelity gap and compute constraints remain a challenge.", "url": "interests/sim2real-transfer/" }
+        ]
+    },
+    {
+      "title": "Work Experience",
+      "type": "list",
+      "description": "",
+      "items": [
+        { "label": "LinkedIn", "description": "", "url": "https://www.linkedin.com/in/gurusubramani/" }
+        ]
     },
     {
       "title": "Publications",
