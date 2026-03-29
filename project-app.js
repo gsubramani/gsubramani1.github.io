@@ -99,6 +99,20 @@ function renderBlocks(blocks) {
 
     } else if (block.type === 'link') {
       html += '<p class="resource-link"><a href="' + block.href + '" target="_blank">' + block.text + '</a></p>';
+
+    } else if (block.type === 'books') {
+      html += '<div class="books-list">';
+      block.items.forEach(function (book) {
+        html += '<div class="book-entry">';
+        html += '<div class="book-title">' + book.title + '</div>';
+        html += '<div class="book-author">' + book.author + '</div>';
+        html += '<div class="book-description">' + book.description + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+      if (block.note) {
+        html += '<p style="margin-top: 15px; color: #666666; font-style: italic;">' + block.note + '</p>';
+      }
     }
   });
   return html;

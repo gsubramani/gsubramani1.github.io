@@ -1,0 +1,46 @@
+{
+  "title": "Recent Reading List",
+  "meta": {
+    "authors": "Papers and articles of interest",
+    "venue": "Curated readings in robotics and AI",
+    "Date": "2026-03-29"
+  },
+  "sections": [
+    {
+      "title": "Books",
+      "blocks": [
+        {
+          "type": "books",
+          "items": [
+            {
+              "title": "C++ Templates: The Complete Guide",
+              "author": "David Vandevoorde, Nicolai M. Josuttis, Douglas Gregor",
+              "description": "The book has 3 parts. Part 1 is a must for anyone doing any serious C++ metaprogramming. I would recommend every C++ programmer to read Part 1. C++ templates are a programming language within the C++ language which means syntax might not always be the first thing it is optimized on. Also, resist the urge to do everything in compile time!"
+            },
+            {
+              "title": "Communicating Technical Information",
+              "author": "Robert R. Rathbone",
+              "description": "This is a tiny book which makes it nice to read. It has helped me improve my technical writing and I would recommend it to anyone who hasn't taken a technical writing course. In the age of LLMs and AI, prompts are everything, so communicating with clarity and precision is critical."
+            },
+            {
+              "title": "Mastering PyTorch",
+              "author": "Ashish Ranjan Jha",
+              "description": "This book isn't just about PyTorch. It's a great book to learn about different deep learning model architectures."
+            },
+            {
+              "title": "Deep Reinforcement Learning Hands-On",
+              "author": "Maxim Lapan",
+              "description": "I've read a lot of texts for RL but this one was practical, clear, and easy to understand. Prerequisite would be an introduction to RL course. It has many examples and is easy to follow. It is for practitioners, not theorists, which is great if you're building things."
+            },
+            {
+              "title": "Getting started with FPGAs Digital circuit design, verilog and VHDL for beginners.",
+              "author": "Russel Merrick",
+              "description": "This book is great if you don't know anything about FPGAs and want to learn from scratch. The book has many examples and every example is written in Verilog and VHDL. It's a great book that helps build intuition."
+            }
+          ],
+          "note": "Not in any particular order"
+        }
+      ]
+    }
+  ]
+}
