@@ -15,8 +15,8 @@
       "items": [
         { "label": "Imitation Learning", "description": "Learning policies from human demonstrations and teleoperation.", "url": "areas/imitation-learning/" },
         { "label": "Modeling Physical Interaction", "description": "Modeling contact-rich interactions and their semantics.", "url": "areas/modeling-physical-interaction/" },
-        { "label": "Physical AI", "description": "Feature representations for tactile and proprioceptive sensing.", "url": "areas/physical-ai/" },
-        { "label": "Robot Control Systems", "description": "Designing controllers that connect perception to actuation.", "url": "areas/control-systems/" }
+        { "label": "Machine Learning Features for Physical AI", "description": "Feature representations for tactile and proprioceptive sensing.", "url": "areas/physical-ai/" },
+        { "label": "Robot Control Systems for Imitation Learning", "description": "Designing controllers that connect perception to actuation.", "url": "areas/control-systems/" }
       ]
     },
     {
