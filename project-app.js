@@ -21,6 +21,17 @@ function renderProject(data) {
   html += '<div class="authors">' + data.meta.authors + '</div>';
   html += '<div class="venue">' + data.meta.venue + '</div>';
   html += '</div>';
+  // Resources/Links
+  if (data.footer) {
+    html += '<div class="external-links">';
+    if (data.footer.paperUrl) {
+      html += '<a href="' + data.footer.paperUrl + '">' + data.footer.paperLabel + '</a>';
+    }
+    if (data.footer.codeUrl) {
+      html += (data.footer.paperUrl ? ' | ' : '') + '<a href="' + data.footer.codeUrl + '">' + data.footer.codeLabel + '</a>';
+    }
+    html += '</div>';
+  }
   html += '</header>';
 
   // Main sections
@@ -36,9 +47,6 @@ function renderProject(data) {
   // Footer
   html += '<footer>';
   html += '<div class="external-links">';
-  if (data.footer) {
-    html += '<a href="' + data.footer.paperUrl + '">' + data.footer.paperLabel + '</a> | ';
-  }
   html += '<a href="../../index.html">Back to Portfolio</a>';
   html += '</div>';
   html += '<p>© 2026 Guru Subramani</p>';

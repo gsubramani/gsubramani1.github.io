@@ -10,11 +10,11 @@
       "blocks": [
         {
           "type": "paragraph",
-          "text": "This is a <strong>generalized method</strong> for recognizing different types of tactile force actions from sensor data. This can also be generalized to other types of time series data beyond force sensing. It extracts features from the frequency domain."
+          "text": "This is a generalized method for recognizing different types of tactile force actions from sensor data. This can also be generalized to other types of time series data beyond force sensing. It extracts features from the frequency domain."
         },
         {
           "type": "paragraph",
-          "text": "This work introduces the first <span class=\"highlight\">generalized method</span> for robust recognition and temporal localization of tactile force events in human demonstrations using the <span class=\"math\">Continuous Wavelet Transform (CWT)</span> with the <span class=\"math\">Complex Morlet wavelet</span>."
+          "text": "This work introduces the first generalized method for robust recognition and temporal localization of tactile force events in human demonstrations using the <span class=\"math\">Continuous Wavelet Transform (CWT)</span> with the <span class=\"math\">Complex Morlet wavelet</span>."
         },
         {
           "type": "figure",
@@ -168,17 +168,12 @@
           ]
         },
         {
-          "type": "paragraph",
-          "text": "The method's <span class=\"highlight\">real-time potential</span> and <span class=\"highlight\">generalization across objects</span> make it suitable for industrial automation, robotic assembly, and human-robot interaction scenarios where tactile understanding is critical."
-        }
-      ]
-    },
-    {
-      "title": "Extensions",
-      "blocks": [
+          "type": "h3",
+          "text": "Future Extensions"
+        },
         {
           "type": "paragraph",
-          "text": "Deep learning approaches in imitation learning have just started to use physical signals like touch. Deep learning predominantly focused on vision based learning and mapping to joint trajectories. This approach allow the following extensions:"
+          "text": "Deep learning approaches in imitation learning have just started to use physical signals like touch. Deep learning predominantly focused on vision based learning and mapping to joint trajectories. This approach enables the following extensions:"
         },
         {
           "type": "list",
@@ -186,16 +181,14 @@
             "Enables tokenizing tactile actions as input to a transformer-based sequence model",
             "The encoded values generalize well across similar actions so they are great as input to machine learning models"
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "The method's <span class=\"highlight\">real-time potential</span> and <span class=\"highlight\">generalization across objects</span> make it suitable for industrial automation, robotic assembly, and human-robot interaction scenarios where tactile understanding is critical."
         }
       ]
     }
   ],
   "footer": {
     "paperUrl": "https://ieeexplore.ieee.org/document/8202271",
-    "paperLabel": "Read Full Paper on IEEE Xplore"
+    "paperLabel": "Read Full Paper on IEEE Xplore",
+    "codeUrl": "https://github.com/gsubramani/SignalRecognition",
+    "codeLabel": "View Code on GitHub"
   }
 }

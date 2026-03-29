@@ -7,7 +7,7 @@
   },
   "sections": [
     {
-      "title": "Areas of Research",
+      "title": "Research Interests",
       "type": "list",
       "description": "Forces and moments in human demonstrations reveal tactile manipulations and constraint interactions. Converting these observations into semantic understanding enables robots to robustly interact with their environment.",
       "items": [
