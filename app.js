@@ -16,12 +16,50 @@ function renderPage(data) {
   html += '<p>' + h.bio + '</p>';
   html += '</header>';
   
-  // Robot Arm Animation (full-width strip below header)
+  // Profile section with image on left and content on right
+  html += '<div class="profile-section">';
+  
+  // Left: Profile picture
+  html += '<div class="profile-picture-container">';
+  html += '<img src="IMG_6787.jpeg" alt="Guru Subramani" class="profile-picture">';
+  html += '</div>';
+  
+  // Right: Robot animation and Research Interests section
+  html += '<div class="profile-content">';
+  
+  // Robot Arm Animation
   html += '<div class="robot-arm-container"><canvas id="robotArm"></canvas></div>';
 
-  // Main sections
+  // Only Research Interests section (first section) in the right column
+  if (data.sections.length > 0) {
+    var firstSection = data.sections[0];
+    html += '<section>';
+    html += '<h2>' + firstSection.title + '</h2>';
+    if (firstSection.description) {
+      html += '<p style="color: #666666; font-size: 13px; margin-bottom: 15px;">' + firstSection.description + '</p>';
+    }
+
+    if (firstSection.type === 'list') {
+      html += '<ul class="interest-list">';
+      firstSection.items.forEach(function (item) {
+        var interestLabel = item.url
+          ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
+          : '<strong class="interest-label">' + item.label + '</strong>';
+        html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
+      });
+      html += '</ul>';
+    }
+    html += '</section>';
+  }
+  
+  // Close profile content and profile section
+  html += '</div>';
+  html += '</div>';
+
+  // Main sections (all remaining sections after the first one)
   html += '<main>';
-  data.sections.forEach(function (section) {
+  for (var i = 1; i < data.sections.length; i++) {
+    var section = data.sections[i];
     html += '<section>';
     html += '<h2>' + section.title + '</h2>';
     if (section.description) {
@@ -72,7 +110,7 @@ function renderPage(data) {
     }
 
     html += '</section>';
-  });
+  }
   html += '</main>';
 
   document.getElementById('app').innerHTML = html;
