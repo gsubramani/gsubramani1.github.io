@@ -12,7 +12,14 @@ function renderPage(data) {
   // Header
   var h = data.header;
   html += '<header>';
-  html += '<div class="header-top"><div><h1>' + h.name + '</h1><p>' + h.title + '</p></div><address><a href="mailto:' + h.email + '">' + h.email + '</a></address></div>';
+  html += '<div class="header-top"><div><h1>' + h.name + '</h1><p>' + h.title + '</p></div><address><a href="mailto:' + h.email + '">' + h.email + '</a>';
+  if (h.github) {
+    html += '<br><a href="' + h.github + '">GitHub</a>';
+  }
+  if (h.linkedin) {
+    html += '<br><a href="' + h.linkedin + '">LinkedIn</a>';
+  }
+  html += '</address></div>';
   html += '<p>' + h.bio + '</p>';
   html += '</header>';
   
@@ -40,14 +47,34 @@ function renderPage(data) {
     }
 
     if (firstSection.type === 'list') {
-      html += '<ul class="interest-list">';
-      firstSection.items.forEach(function (item) {
-        var interestLabel = item.url
-          ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
-          : '<strong class="interest-label">' + item.label + '</strong>';
-        html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
-      });
-      html += '</ul>';
+      var hasLogos = firstSection.items.some(function (item) { return item.logo; });
+      
+      if (hasLogos) {
+        html += '<div class="logos-grid">';
+        firstSection.items.forEach(function (item) {
+          var interestLabel = item.url
+            ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
+            : '<strong class="interest-label">' + item.label + '</strong>';
+          
+          if (item.logo) {
+            var isRmiLogo = item.logo.indexOf('logoFull') !== -1;
+            var logoClass = isRmiLogo ? 'list-logo rmi-logo' : 'list-logo';
+            html += '<div class="logo-card"><div class="logo-frame ' + (isRmiLogo ? 'rmi-frame' : '') + '"><img src="' + item.logo + '" alt="' + item.label + '" class="' + logoClass + '"></div><div class="card-text">' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></div></div>';
+          } else {
+            html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
+          }
+        });
+        html += '</div>';
+      } else {
+        html += '<ul class="interest-list">';
+        firstSection.items.forEach(function (item) {
+          var interestLabel = item.url
+            ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
+            : '<strong class="interest-label">' + item.label + '</strong>';
+          html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
+        });
+        html += '</ul>';
+      }
     }
     html += '</section>';
   }
@@ -67,14 +94,34 @@ function renderPage(data) {
     }
 
     if (section.type === 'list') {
-      html += '<ul class="interest-list">';
-      section.items.forEach(function (item) {
-        var interestLabel = item.url
-          ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
-          : '<strong class="interest-label">' + item.label + '</strong>';
-        html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
-      });
-      html += '</ul>';
+      var hasLogos = section.items.some(function (item) { return item.logo; });
+      
+      if (hasLogos) {
+        html += '<div class="logos-grid">';
+        section.items.forEach(function (item) {
+          var interestLabel = item.url
+            ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
+            : '<strong class="interest-label">' + item.label + '</strong>';
+          
+          if (item.logo) {
+            var isRmiLogo = item.logo.indexOf('logoFull') !== -1;
+            var logoClass = isRmiLogo ? 'list-logo rmi-logo' : 'list-logo';
+            html += '<div class="logo-card"><div class="logo-frame ' + (isRmiLogo ? 'rmi-frame' : '') + '"><img src="' + item.logo + '" alt="' + item.label + '" class="' + logoClass + '"></div><div class="card-text">' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></div></div>';
+          } else {
+            html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
+          }
+        });
+        html += '</div>';
+      } else {
+        html += '<ul class="interest-list">';
+        section.items.forEach(function (item) {
+          var interestLabel = item.url
+            ? '<a class="interest-label" href="' + item.url + '">' + item.label + '</a>'
+            : '<strong class="interest-label">' + item.label + '</strong>';
+          html += '<li>' + interestLabel + '<br><span class="interest-desc">' + item.description + '</span></li>';
+        });
+        html += '</ul>';
+      }
     }
 
     if (section.type === 'projects') {
@@ -92,7 +139,7 @@ function renderPage(data) {
     }
 
     if (section.type === 'publications') {
-      html += '<p>Please visit my <a href="' + section.scholarUrl + '">Google Scholar profile</a> for a complete list of publications.</p>';
+      // html += '<p>Please visit my <a href="' + section.scholarUrl + '">Google Scholar profile</a> for a complete list of publications.</p>';
       html += '<ul>';
       section.items.forEach(function (pub) {
         html += '<li>';

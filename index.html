@@ -9,7 +9,8 @@
         body { background-color: #FBF9F5; color: #2F3337; font-family: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', 'Liberation Mono', Menlo, Monaco, Consolas, monospace; font-size: 14px; line-height: 1.6; padding: 20px; font-weight: 500; }
         header { margin-bottom: 30px; border-bottom: 2px solid #2F3337; padding-bottom: 15px; }
         .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        address { font-style: normal; }
+        address { font-style: normal; line-height: 1.8; }
+        address a { display: inline; }
         h1 { font-size: 24px; margin-bottom: 5px; color: #2F3337; }
         h2 { font-size: 18px; margin-top: 20px; margin-bottom: 5px; color: #2F3337; }
         a { color: #A85A41; text-decoration: none; border-bottom: 1px solid #A85A41; }
@@ -20,6 +21,17 @@
         .interest-label { display: block; color: #A85A41; font-size: 15px; margin-bottom: -25px; border-bottom: none; }
         .interest-label:hover { background-color: transparent; color: #7D4B38; }
         .interest-desc { color: #666666; font-size: 13px; font-weight: 400;}
+        
+        /* Logo cards grid */
+        .logos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 15px; }
+        .logo-card { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 140px; margin: 0 auto; }
+        .logo-frame { display: flex; align-items: center; justify-content: center; width: 140px; height: 140px; border: 1px solid #ddd; border-radius: 8px; padding: 8px; background-color: #fff; }
+        .rmi-frame { background-color: #000; border: 1px solid #000; }
+        .list-logo { width: 100%; height: 100%; object-fit: contain; border-radius: 4px; }
+        .rmi-logo { filter: brightness(1.1); }
+        .card-text { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin-top: 8px; }
+        .card-text .interest-label { margin-bottom: -12px; font-size: 13px; }
+        .card-text .interest-desc { font-size: 11px; margin-top: 2px; }
         .project-card { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
         .project-card img { width: 100%; max-width: 600px; height: auto; object-fit: cover; border: 1px solid #A85A41; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
         .project-card h3 { font-size: 16px; margin: 0 0 8px 0; color: #2F3337; }
@@ -95,6 +107,10 @@
             .profile-content {
                 width: 100%;
             }
+            
+            .logos-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .logo-card { max-width: 120px; }
+            .logo-frame { width: 120px; height: 120px; padding: 6px; }
         }
 
         @media (max-width: 480px) {
@@ -105,6 +121,10 @@
             .profile-section {
                 gap: 15px;
             }
+            
+            .logos-grid { grid-template-columns: 1fr; gap: 12px; }
+            .logo-card { max-width: 100px; }
+            .logo-frame { width: 100px; height: 100px; padding: 5px; }
         }
     </style>
 </head>

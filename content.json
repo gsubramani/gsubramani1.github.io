@@ -3,6 +3,8 @@
     "name": "Guru Subramani PhD",
     "title": "Enabling robots to touch and feel the world.",
     "email": "mail@sguru.ai",
+    "linkedin": "https://www.linkedin.com/in/gurusubramani/",
+    "github": "https://github.com/gsubramani1",
     "bio": "My work focuses on imitation learning for physical AI."
   },
   "sections": [
@@ -42,12 +44,16 @@
         ]
     },
     {
-      "title": "Work Experience",
+      "title": "Communities",
       "type": "list",
       "description": "",
       "items": [
-        { "label": "LinkedIn", "description": "", "url": "https://www.linkedin.com/in/gurusubramani/" }
-        ]
+        { "label": "REACH Lab", "description": "", "url": "https://reach.wisc.edu/", "logo": "labs-and-communities/reach_logo3.png" },
+        { "label": "Robotics and Machine Intelligence ", "description": "", "url": "https://rmi.nitt.edu/", "logo": "labs-and-communities/logoFull.84ed77f0d50e0f23ed7e.png" },
+        { "label": "University of Wisconsin - Madison", "description": "", "url": "https://www.wisc.edu/", "logo": "labs-and-communities/uw-logo-horizontal-color-web-digital.png" },
+        { "label": "National Institute of Technology Tiruchirappalli", "description": "", "url": "https://www.nitt.edu/"},        
+        { "label": "UW Graphics Group", "description": "", "url": "https://graphics.cs.wisc.edu/" }
+      ]
     },
     {
       "title": "Publications",
