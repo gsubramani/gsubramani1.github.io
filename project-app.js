@@ -113,6 +113,35 @@ function renderBlocks(blocks) {
       if (block.note) {
         html += '<p style="margin-top: 15px; color: #666666; font-style: italic;">' + block.note + '</p>';
       }
+
+    } else if (block.type === 'papers') {
+      html += '<div class="papers-list">';
+      block.items.forEach(function (paper) {
+        html += '<div class="paper-entry">';
+        html += '<div class="paper-title">' + paper.title + '</div>';
+        html += '<div class="paper-authors">' + paper.authors + '</div>';
+        if (paper.venue) {
+          html += '<div class="paper-venue">' + paper.venue + '</div>';
+        }
+        if (paper.description) {
+          html += '<div class="paper-description">' + paper.description + '</div>';
+        }
+        if (paper.paperLink || paper.websiteLink) {
+          html += '<div class="paper-link">';
+          if (paper.websiteLink) {
+            html += '<a href="' + paper.websiteLink + '" target="_blank">Website</a>';
+          }
+          if (paper.paperLink) {
+            html += (paper.websiteLink ? ' | ' : '') + '<a href="' + paper.paperLink + '" target="_blank">Paper</a>';
+          }
+          html += '</div>';
+        }
+        html += '</div>';
+      });
+      html += '</div>';
+      if (block.note) {
+        html += '<p style="margin-top: 15px; color: #666666; font-style: italic;">' + block.note + '</p>';
+      }
     }
   });
   return html;

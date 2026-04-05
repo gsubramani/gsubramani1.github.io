@@ -7,6 +7,32 @@
   },
   "sections": [
     {
+      "title": "Recent Papers",
+      "blocks": [
+        {
+          "type": "papers",
+          "items": [
+            {
+              "title": "Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success",
+              "authors": "Moo Jin Kim, Chelsea Finn, Percy Liang",
+              "venue": "arXiv:2502.19645, 2025",
+              "description": "Introduces OpenVLA-OFT and demonstrates many improvements to OpenVLA based models including parallel action chunking, enabling multiple image inputs using FiLM and improvements to action generation an lot more.",
+              "paperLink": "https://arxiv.org/abs/2502.19645",
+              "websiteLink": "https://openvla-oft.github.io/"
+            },
+            {
+              "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+              "authors": "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen",
+              "venue": "arXiv:2106.09685, 2021",
+              "description": "Proposes Low-Rank Adaptation (LoRA), which freezes pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture. Reduces trainable parameters by 10,000x and GPU memory by 3x compared to full fine-tuning GPT-3 175B, while achieving comparable or better performance on RoBERTa, DeBERTa, GPT-2, and GPT-3.",
+              "paperLink": "https://arxiv.org/abs/2106.09685"
+            }
+          ],
+          "note": ""
+        }
+      ]
+    },
+    {
       "title": "Books",
       "blocks": [
         {
