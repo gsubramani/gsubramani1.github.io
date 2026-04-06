@@ -126,6 +126,16 @@ function renderBlocks(blocks) {
         if (paper.description) {
           html += '<div class="paper-description">' + paper.description + '</div>';
         }
+        if (paper.keyIdeaToolbox && paper.keyIdeaToolbox.length > 0) {
+          html += '<div class="paper-key-ideas">';
+          html += '<strong>Idea toolbox:</strong>';
+          html += '<ul>';
+          paper.keyIdeaToolbox.forEach(function (idea) {
+            html += '<li>' + idea + '</li>';
+          });
+          html += '</ul>';
+          html += '</div>';
+        }
         if (paper.paperLink || paper.websiteLink) {
           html += '<div class="paper-link">';
           if (paper.websiteLink) {

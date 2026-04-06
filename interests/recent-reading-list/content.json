@@ -7,7 +7,7 @@
   },
   "sections": [
     {
-      "title": "Recent Papers",
+      "title": "Recent Interesting Papers",
       "blocks": [
         {
           "type": "papers",
@@ -18,14 +18,47 @@
               "venue": "arXiv:2502.19645, 2025",
               "description": "Introduces OpenVLA-OFT with key improvements including parallel action chunking, multi-image inputs via FiLM, and enhanced action generation. Achieves significantly faster inference gains.",
               "paperLink": "https://arxiv.org/abs/2502.19645",
-              "websiteLink": "https://openvla-oft.github.io/"
+              "websiteLink": "https://openvla-oft.github.io/",
+              "keyIdeaToolbox": [
+                "Action chunking and parallel action decoding for faster inference instead of diffusion",
+                "L1 loss with continuous actions and action chunking performs better than diffusion action generation",
+                "LoRA fine-tuning",
+                "FiLM (Feature-wise Linear Modulation) to implement affine transformations for multi-image inputs across image patches",
+                "Continuous action representation instead of discrete actions"
+              ]
             },
             {
               "title": "LoRA: Low-Rank Adaptation of Large Language Models",
               "authors": "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen",
               "venue": "arXiv:2106.09685, 2021",
-              "description": "Proposes Low-Rank Adaptation (LoRA), which freezes pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture. Reduces trainable parameters by 10,000x and GPU memory by 3x compared to full fine-tuning GPT-3 175B, while achieving comparable or better performance on RoBERTa, DeBERTa, GPT-2, and GPT-3.",
-              "paperLink": "https://arxiv.org/abs/2106.09685"
+              "description": "Proposes Low-Rank Adaptation (LoRA), which freezes pre-trained model weights and injects trainable low-rank matrices into each Transformer layer. Reduces trainable parameters by 10,000x and GPU memory by 3x compared to full fine-tuning, while achieving comparable or better performance on RoBERTa, DeBERTa, GPT-2, and GPT-3. For linear layers with weight matrix W of shape (d_out, d_in), LoRA decomposes updates into trainable matrices B (shape r × d_in) and A (shape d_out × r), where r is a small rank. During inference, the A*B product is added to original weights, enabling efficient adaptation with minimal overhead; r can be as low as 1.",
+              "paperLink": "https://arxiv.org/abs/2106.09685",
+              "keyIdeaToolbox": [
+                "Low-rank weight updates",
+                "Universally applicable to linear layers in any architecture"
+              ]
+            },
+            {
+              "title": "FiLM: Visual Reasoning with a General Conditioning Layer",
+              "authors": "Ethan Perez, Florian Strub, Harm de Vries, Vincent Dumoulin, Aaron Courville",
+              "venue": "arXiv:1709.07871, AAAI 2018",
+              "description": "Introduces Feature-wise Linear Modulation (FiLM), a general-purpose conditioning method that applies feature-wise affine transformations to neural network computation. FiLM layers modulate features based on conditioning information, enabling effective visual reasoning.",
+              "paperLink": "https://arxiv.org/abs/1709.07871",
+              "keyIdeaToolbox": [
+                "Feature-wise Linear Modulation (FiLM) layer",
+                "Affine transformations of image patches directly: y = γ ⊙ x + β"
+              ]
+            },
+            {
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "authors": "Cheng Chi, Zhenjia Xu, Siyuan Feng, Eric Cousineau, Yilun Du, Benjamin Burchfiel, Russ Tedrake, Shuran Song",
+              "venue": "arXiv:2303.04137, RSS 2023 / IJRR 2024",
+              "description": "Introduces Diffusion Policy, which represents robot visuomotor policies as conditional denoising diffusion processes.",
+              "paperLink": "https://arxiv.org/abs/2303.04137",
+              "websiteLink": "https://diffusion-policy.cs.columbia.edu/",
+              "keyIdeaToolbox": [
+                "Diffusion models for action generation and policy learning"
+              ]
             }
           ],
           "note": ""
@@ -44,11 +77,6 @@
               "description": "The book has 3 parts. Part 1 is a must for anyone doing any serious C++ metaprogramming. I would recommend every C++ programmer to read Part 1. C++ templates are a programming language within the C++ language which means syntax might not always be the first thing it is optimized on. Also, resist the urge to do everything in compile time!"
             },
             {
-              "title": "Communicating Technical Information",
-              "author": "Robert R. Rathbone",
-              "description": "This is a tiny book which makes it nice to read. It has helped me improve my technical writing and I would recommend it to anyone who hasn't taken a technical writing course. In the age of LLMs and AI, prompts are everything, so communicating with clarity and precision is critical."
-            },
-            {
               "title": "Mastering PyTorch",
               "author": "Ashish Ranjan Jha",
               "description": "This book isn't just about PyTorch. It's a great book to learn about different deep learning model architectures."
@@ -57,11 +85,6 @@
               "title": "Deep Reinforcement Learning Hands-On",
               "author": "Maxim Lapan",
               "description": "I've read a lot of texts for RL but this one was practical, clear, and easy to understand. Prerequisite would be an introduction to RL course. It has many examples and is easy to follow. It is for practitioners, not theorists, which is great if you're building things."
-            },
-            {
-              "title": "Getting started with FPGAs Digital circuit design, Verilog and VHDL for beginners.",
-              "author": "Russell Merrick",
-              "description": "This book is great if you don't know anything about FPGAs and want to learn from scratch. The book has many examples and every example is written in Verilog and VHDL. It's a great book that helps build intuition."
             }
           ],
           "note": "Not in any particular order"
